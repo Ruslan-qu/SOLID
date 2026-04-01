@@ -4,3 +4,5 @@ O: Open-Closed Principle (Принцип открытости-закрытост
 L: Liskov Substitution Principle (Принцип подстановки Барбары Лисков).
 I: Interface Segregation Principle (Принцип разделения интерфейса).
 D: Dependency Inversion Principle (Принцип инверсии зависимостей).
+
+Принципы продемонстрированы на примере фреймворка Symfony.
