@@ -31,7 +31,7 @@ class BusDriver extends Driver implements DriverInterface
     }
 }
 
-class TruckDriver implements DriverInterface
+class TruckDriver extends Driver implements DriverInterface
 {
     public function drive(string $string): string /*int, bool, т.д, запрещено*/
     {
