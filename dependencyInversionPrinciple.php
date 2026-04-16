@@ -2,8 +2,14 @@
 
 /*Dependency Inversion Principle (Принцип инверсии зависимостей).*/
 
-/* */
-/* */
+/*Модули верхних уровней не должны зависеть от модулей нижних уровней.
+Оба типа модулей должны зависеть от абстракций.
+Абстракции не должны зависеть от деталей.
+Детали должны зависеть от абстракций.*/
+
+/*Ниже в классе Operator используется не конкретная реализация классов BusDriver и TruckDriver, 
+а абстракция в виде интерфейса DriverInterface. Это обеспечивает гибкость: можно легко заменять реализации, 
+не внося изменений в сам код.*/
 
 interface DriverInterface
 {
@@ -20,23 +26,23 @@ class Driver implements DriverInterface
 
 class BusDriver extends Driver implements DriverInterface
 {
-    public function drive(string $string): string /*int, bool, т.д, запрещено*/
+    public function drive(string $string): string
     {
-        return $string; /*int, bool, т.д, запрещено*/
+        return $string;
     }
 }
 
 class TruckDriver extends Driver implements DriverInterface
 {
-    public function drive(string $string): string /*int, bool, т.д, запрещено*/
+    public function drive(string $string): string
     {
-        return $string; /*int, bool, т.д, запрещено*/
+        return $string;
     }
 }
 
 class Operator
 {
-    private DriverInterface $driverInterface; /*class TruckDriver или class BusDriver запрещено нарушают принцип*/
+    private DriverInterface $driverInterface; /*class TruckDriver или class BusDriver запрещено, нарушают принцип*/
 
     public function setDriverInterface(DriverInterface $driverInterface)
     {
